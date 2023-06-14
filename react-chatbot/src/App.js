@@ -17,7 +17,28 @@ function App() {
     console.log(`New message incoming! ${newMessage}`);
     // Now send the message throught the backend API
 
-    addResponseMessage("Fetched response from API");
+    let config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: 'http://0971-104-199-237-112.ngrok-free.app/submit-prompt',
+      headers: { 
+        'Content-Type': 'application/json',
+      },
+      data : newMessage
+    };
+
+    async function makeRequest() {
+      try {
+        const response = await axios.request(config);
+        console.log(JSON.stringify(response.data));
+        addResponseMessage(JSON.stringify(response.data.response.answer));
+      }
+      catch (error) {
+        console.log(error);
+      }
+    }
+    
+    makeRequest();
   };
 
     return (
