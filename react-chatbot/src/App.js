@@ -13,6 +13,7 @@ function App() {
   const handleNewUserMessage = (newMessage) => {
     console.log(`New message incoming! ${newMessage}`);
     // Now send the message throught the backend API
+    addResponseMessage(newMessage);
   };
 
     return (
