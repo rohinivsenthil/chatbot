@@ -2,13 +2,13 @@ import streamlit as st
 from streamlit_chat import message
 # import requests
 
-st.set_page_config(page_title="Streamlit Chat - Demo", page_icon=":robot:")
+st.set_page_config(page_title="Streamlit ChatBot - Demo", page_icon=":robot:")
 
 # API_URL = "https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill"
 # headers = {"Authorization": st.secrets['api_key']}
 
-st.header("Streamlit Chat - Demo")
-st.markdown("[Github](https://github.com/ai-yash/st-chat)")
+st.header("Streamlit ChatBot - Demo")
+st.markdown("[Github](https://github.com/rohinivsenthil/chatbot)")
 
 if "generated" not in st.session_state:
     st.session_state["generated"] = []
@@ -47,5 +47,5 @@ with st.sidebar:
 
     if st.session_state["generated"]:
         for i in range(len(st.session_state["generated"]) - 1, -1, -1):
-            message(st.session_state["generated"][i], key=str(i))
             message(st.session_state["past"][i], is_user=True, key=str(i) + "_user")
+            message(st.session_state["generated"][i], key=str(i))
