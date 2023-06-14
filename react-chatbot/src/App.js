@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { Widget, addResponseMessage } from 'react-chat-widget';
+import axios from 'axios';
 
 import 'react-chat-widget/lib/styles.css';
+// import './App.css';
 
 import logo from './logo.svg';
 
