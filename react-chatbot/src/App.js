@@ -24,7 +24,9 @@ function App() {
       headers: { 
         'Content-Type': 'application/json',
       },
-      data : newMessage
+      data : {
+        "prompt": newMessage
+      }
     };
 
     async function makeRequest() {
