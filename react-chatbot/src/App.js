@@ -7,13 +7,15 @@ import logo from './logo.svg';
 
 function App() {
   useEffect(() => {
-    addResponseMessage('Welcome to this **awesome** chat!');
+    addResponseMessage('Hello! How can I help you?');
   }, []);
+
 
   const handleNewUserMessage = (newMessage) => {
     console.log(`New message incoming! ${newMessage}`);
     // Now send the message throught the backend API
-    addResponseMessage(newMessage);
+
+    addResponseMessage("Fetched response from API");
   };
 
     return (
@@ -21,8 +23,8 @@ function App() {
         <Widget
           handleNewUserMessage={handleNewUserMessage}
           profileAvatar={logo}
-          title="My new awesome title"
-          subtitle="And my cool subtitle"
+          title="Course Advisor Chatbot"
+          subtitle=""
         />
       </div>
     );
