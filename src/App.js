@@ -3,7 +3,6 @@ import { Widget, addResponseMessage } from 'react-chat-widget';
 import axios from 'axios';
 
 import 'react-chat-widget/lib/styles.css';
-// import './App.css';
 
 import logo from './logo.svg';
 
@@ -15,12 +14,11 @@ function App() {
 
   const handleNewUserMessage = (newMessage) => {
     console.log(`New message incoming! ${newMessage}`);
-    // Now send the message throught the backend API
 
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'http://0971-104-199-237-112.ngrok-free.app/submit-prompt',
+      url: 'http://be00-104-199-237-112.ngrok-free.app/submit-prompt', //replace with ngrok URL
       headers: { 
         'Content-Type': 'application/json',
       },
